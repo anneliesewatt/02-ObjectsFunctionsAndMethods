@@ -3,11 +3,11 @@ Practice DEFINING and CALLING
      FUNCTIONS
 
 Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher,
-         Aaron Wilkin, their colleagues, and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         Aaron Wilkin, their colleagues, and A. Watt.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 ###############################################################################
-# TODO: 2.
+# DONE: 2.
 #   Allow this module to use the  rosegraphics.py  module by marking the
 #     src
 #   folder in this project as a "Sources Root", as follows:
@@ -43,7 +43,7 @@ def main():
 
 
 ###############################################################################
-# TODO: 4a.  Define a function immediately below this _TODO_.
+# DONE: 4a.  Define a function immediately below this _TODO_.
 #   It takes two arguments:
 #     -- a string that represents a color (e.g. 'red')
 #     -- a positive integer that represents the thickness of a Pen.
@@ -65,15 +65,45 @@ def main():
 #
 #   You may name the function and its parameters whatever you wish.
 #
-# TODO: 4b.  In main, CALL your function at least TWICE (with different values
+# DONE: 4b.  In main, CALL your function at least TWICE (with different values
 #   for the arguments) to test whether you defined the function correctly.
 #
 ###############################################################################
 
+window = rg.TurtleWindow()
 
-###############################################################################
-# TODO: 5.
-#   COMMIT-and-PUSH your work (after changing this TO-DO to DONE).
+def main():
+    tw1()
+    tw2()
+
+def tw1():
+
+    oliver = rg.SimpleTurtle('turtle')
+    oliver.pen = rg.Pen('green',8)
+
+    sam = rg.SimpleTurtle ('turtle')
+    sam.pen = rg.Pen('red',5)
+
+    oliver.forward(100)
+    sam.backward(100)
+
+def tw2():
+
+    oliver = rg.SimpleTurtle('turtle')
+    oliver.pen = rg.Pen('green', 3)
+
+    sam = rg.SimpleTurtle('turtle')
+    sam.pen = rg.Pen('cyan', 5)
+
+    oliver.forward(100)
+    sam.backward(100)
+
+
+window.close_on_mouse_click()
+
+
+###############################################################################: 5.
+#DONE   COMMIT-and-PUSH your work (after changing this TO-DO to DONE).
 #
 #   As a reminder, here is how you should do so:
 #     1. Select   VCS   from the menu bar (above).
