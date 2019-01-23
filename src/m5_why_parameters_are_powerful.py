@@ -24,9 +24,13 @@ def main():
     #draw_circles(rg.Point(100, 50))
     #draw_circles(rg.Point(-200, 0))
 
-    better_draw_circles(rg.Point (50, 50))
-    better_draw_circles(rg.Point (150, 50))
-    better_draw_circles(rg.Point (100, 25))
+    #better_draw_circles(rg.Point (50, 50))
+    #better_draw_circles(rg.Point (150, 50))
+    #better_draw_circles(rg.Point (100, 25))
+
+    even_better_draw_circles(rg.Point(100, 50),20,5,'orange',7)
+    even_better_draw_circles(rg.Point(50,100),10,10,"cyan",4)
+    even_better_draw_circles(rg.Point(20,20),30,9,'green',3)
 
     window.update()
     window.close_on_mouse_click()
@@ -150,7 +154,7 @@ def better_draw_circles(point):
 
 
 ###############################################################################
-# TODO: 4a.
+# DONE: 4a.
 #   In the previous _TODO_, you made a MORE POWERFUL version
 #   of   draw_circles   by introducing a new PARAMETER for the amount
 #   by which the radii of the concentric circles increase.
@@ -172,7 +176,7 @@ def better_draw_circles(point):
 #   to the body of the   even_better_draw_circles   function defined below.
 #   Then add parameters and modify the code to make them work!
 #
-# TODO: 4b.
+# DONE: 4b.
 #   In   main  at the place indicated, comment-out the existing calls
 #   to  better_draw_circles  and add at least two calls to the improved
 #   even_better_draw_circles  function, to TEST that your modified code is
@@ -180,10 +184,27 @@ def better_draw_circles(point):
 #
 ###############################################################################
 
-def even_better_draw_circles(point):
+def even_better_draw_circles(center,delta,number,color,thickness):
     """ An improved version of draw_circles, per the _TODO_ above. """
     # READ the above _TODO_ and then copy-paste code from better_circles here:
+    turtle = rg.SimpleTurtle()
+    turtle.pen_up()
+    turtle.go_to(center)
+    turtle.set_heading(0)  # Point "east" (towards the right)
+    turtle.pen = rg.Pen(color, thickness)
+    for k in range(number):  # k becomes 1, 2, 3, ... 10
 
+        turtle.pen_up()
+
+        # Go DOWN 15 pixels, ending up pointing east again
+        turtle.right(90)
+        turtle.forward(delta)
+        turtle.left(90)
+
+        turtle.pen_down()
+        print(k)
+
+        turtle.draw_circle(delta * k)
 
 ###############################################################################
 # TODO: 5.
